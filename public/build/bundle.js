@@ -1158,7 +1158,7 @@ var app = (function () {
     			html_tag.a = t;
     			attr_dev(button, "id", "answer-btn");
     			attr_dev(button, "class", "answer svelte-grzaqs");
-    			add_location(button, file$6, 56, 16, 1151);
+    			add_location(button, file$6, 56, 16, 1152);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -1204,8 +1204,8 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Next Question";
     			attr_dev(button, "class", "next-question-btn svelte-grzaqs");
-    			add_location(button, file$6, 65, 12, 1392);
-    			add_location(div, file$6, 64, 8, 1374);
+    			add_location(button, file$6, 65, 12, 1393);
+    			add_location(div, file$6, 64, 8, 1375);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1280,13 +1280,13 @@ var app = (function () {
 
     			t1 = space();
     			if (if_block) if_block.c();
-    			add_location(h3, file$6, 50, 8, 1013);
+    			add_location(h3, file$6, 50, 8, 1014);
     			attr_dev(div0, "class", "question-div");
-    			add_location(div0, file$6, 49, 4, 978);
+    			add_location(div0, file$6, 49, 4, 979);
     			attr_dev(div1, "class", "answer-div svelte-grzaqs");
-    			add_location(div1, file$6, 53, 4, 1068);
+    			add_location(div1, file$6, 53, 4, 1069);
     			attr_dev(div2, "class", "question-component");
-    			add_location(div2, file$6, 47, 0, 940);
+    			add_location(div2, file$6, 47, 0, 941);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

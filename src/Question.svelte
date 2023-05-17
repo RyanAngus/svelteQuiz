@@ -43,7 +43,7 @@
     }
 
 </script>
-
+ 
 
 <div class="question-component">
 
