@@ -14,7 +14,7 @@ let animate = true;
   <main>
   {#if animate}
     <div in:fade={{ delay: 500 }} out:scale class="start-div">
-      <h2>Welcome to 'Trivia Time'!</h2>
+      <h2>🎉 Welcome to 'Trivia Time'! 🎉</h2>
       <button class="btn" on:click={startQuiz}>START</button>
     </div>
   {/if}

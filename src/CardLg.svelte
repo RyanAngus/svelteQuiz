@@ -16,6 +16,7 @@
     box-shadow: 0px 2px 4px rgba(0,0,0,0.8);
     min-width: 80vw;
     min-height: 80vh;
+    margin-top: 1rem;
   }
 
 </style>

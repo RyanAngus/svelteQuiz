@@ -8,10 +8,16 @@
     import Card from "./Card.svelte";
     import CardLg from "./CardLg.svelte";
 
+    import { Progress } from '@svelteuidev/core';
+
+
+
+
+
     let activeQuestion = 0;
     let quiz = getQuiz();
     let isModalOpen = false;
-    let numberOfQuestions = 2
+    let numberOfQuestions = 10
 
 
 
@@ -46,12 +52,19 @@ function addToScore() {
 
 
 
+
 </script>
 
 <main in:fade={{ delay: 500 }} out:fade>
     <Header {resetQuiz} />
 
+    <Progress value= { questionNumber * 10 }    color={'#80FF72'} />
+    
+    
     <CardLg>
+    
+        
+
         <div class="quiz">
 
             <!-- <h3>My Score: {$score} / {numberOfQuestions}</h3> -->
@@ -113,5 +126,7 @@ function addToScore() {
         display: flex;
         flex-direction: column;
     }
+
+   
 
 </style>

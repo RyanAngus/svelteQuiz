@@ -75,17 +75,6 @@
 
 
 <style>
-    h5 {
-        color: blueviolet;
-    }
-
-    h5.wrong {
-        color: red;
-    }
-
-    h5.isCorrect {
-        color: green;
-    }
 
     .answer-div {
         display: flex;
