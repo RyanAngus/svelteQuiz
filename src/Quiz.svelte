@@ -22,7 +22,7 @@
 
 
 async function getQuiz() {
-    const res = await fetch(`https://opentdb.com/api.php?amount=${numberOfQuestions}&category=12&type=multiple&difficulty=medium`);
+    const res = await fetch(`https://opentdb.com/api.php?amount=${numberOfQuestions}&category=9&type=multiple`);
     const quiz = await res.json()
     return quiz
 }
@@ -58,12 +58,11 @@ function addToScore() {
 <main in:fade={{ delay: 500 }} out:fade>
     <Header {resetQuiz} />
 
-    <Progress value= { questionNumber * 10 }    color={'#80FF72'} />
     
     
     <CardLg>
     
-        
+
 
         <div class="quiz">
 
@@ -81,6 +80,8 @@ function addToScore() {
                 {#if index === activeQuestion}
 
                     <Card>
+                        <Progress value= { questionNumber * 10 }    color={'#80FF72'} />
+
                         <div in:fade={{y: 200, duration: 300, delay: 300}} >
                             <h4>Question #{questionNumber}</h4>
                             <Question {nextQuestion} {question} />

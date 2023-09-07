@@ -6609,7 +6609,7 @@ var app = (function () {
     	return block;
     }
 
-    // (76:12) {:then data}
+    // (75:12) {:then data}
     function create_then_block(ctx) {
     	let t;
     	let if_block_anchor;
@@ -6734,14 +6734,14 @@ var app = (function () {
     		block,
     		id: create_then_block.name,
     		type: "then",
-    		source: "(76:12) {:then data}",
+    		source: "(75:12) {:then data}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (81:16) {#if index === activeQuestion}
+    // (80:16) {#if index === activeQuestion}
     function create_if_block_1$1(ctx) {
     	let card;
     	let current;
@@ -6789,23 +6789,33 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(81:16) {#if index === activeQuestion}",
+    		source: "(80:16) {#if index === activeQuestion}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (83:20) <Card>
+    // (82:20) <Card>
     function create_default_slot_2(ctx) {
+    	let progress;
+    	let t0;
     	let div;
     	let h4;
-    	let t0;
     	let t1;
     	let t2;
+    	let t3;
     	let question;
     	let div_intro;
     	let current;
+
+    	progress = new Progress$1({
+    			props: {
+    				value: /*questionNumber*/ ctx[2] * 10,
+    				color: '#80FF72'
+    			},
+    			$$inline: true
+    		});
 
     	question = new Question({
     			props: {
@@ -6817,32 +6827,40 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			create_component(progress.$$.fragment);
+    			t0 = space();
     			div = element("div");
     			h4 = element("h4");
-    			t0 = text("Question #");
-    			t1 = text(/*questionNumber*/ ctx[2]);
-    			t2 = space();
+    			t1 = text("Question #");
+    			t2 = text(/*questionNumber*/ ctx[2]);
+    			t3 = space();
     			create_component(question.$$.fragment);
-    			add_location(h4, file$2, 84, 28, 1853);
-    			add_location(div, file$2, 83, 24, 1772);
+    			add_location(h4, file$2, 85, 28, 1847);
+    			add_location(div, file$2, 84, 24, 1766);
     		},
     		m: function mount(target, anchor) {
+    			mount_component(progress, target, anchor);
+    			insert_dev(target, t0, anchor);
     			insert_dev(target, div, anchor);
     			append_dev(div, h4);
-    			append_dev(h4, t0);
     			append_dev(h4, t1);
-    			append_dev(div, t2);
+    			append_dev(h4, t2);
+    			append_dev(div, t3);
     			mount_component(question, div, null);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (!current || dirty & /*questionNumber*/ 4) set_data_dev(t1, /*questionNumber*/ ctx[2]);
+    			const progress_changes = {};
+    			if (dirty & /*questionNumber*/ 4) progress_changes.value = /*questionNumber*/ ctx[2] * 10;
+    			progress.$set(progress_changes);
+    			if (!current || dirty & /*questionNumber*/ 4) set_data_dev(t2, /*questionNumber*/ ctx[2]);
     			const question_changes = {};
     			if (dirty & /*quiz*/ 2) question_changes.question = /*question*/ ctx[11];
     			question.$set(question_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
+    			transition_in(progress.$$.fragment, local);
     			transition_in(question.$$.fragment, local);
 
     			if (!div_intro) {
@@ -6855,10 +6873,13 @@ var app = (function () {
     			current = true;
     		},
     		o: function outro(local) {
+    			transition_out(progress.$$.fragment, local);
     			transition_out(question.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
+    			destroy_component(progress, detaching);
+    			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(div);
     			destroy_component(question);
     		}
@@ -6868,14 +6889,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(83:20) <Card>",
+    		source: "(82:20) <Card>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (79:12) {#each data.results as question, index }
+    // (78:12) {#each data.results as question, index }
     function create_each_block(ctx) {
     	let if_block_anchor;
     	let current;
@@ -6934,14 +6955,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(79:12) {#each data.results as question, index }",
+    		source: "(78:12) {#each data.results as question, index }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (94:16) {#if activeQuestion === numberOfQuestions}
+    // (95:16) {#if activeQuestion === numberOfQuestions}
     function create_if_block$2(ctx) {
     	let card;
     	let current;
@@ -6989,14 +7010,14 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(94:16) {#if activeQuestion === numberOfQuestions}",
+    		source: "(95:16) {#if activeQuestion === numberOfQuestions}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (96:16) <Card>
+    // (97:16) <Card>
     function create_default_slot_1(ctx) {
     	let div;
     	let h3;
@@ -7025,10 +7046,10 @@ var app = (function () {
     			t7 = space();
     			h4 = element("h4");
     			h4.textContent = "Click the 'Start Quiz' button to play again!";
-    			add_location(h3, file$2, 97, 24, 2193);
-    			add_location(h2, file$2, 98, 24, 2237);
-    			add_location(h4, file$2, 100, 24, 2372);
-    			add_location(div, file$2, 96, 20, 2163);
+    			add_location(h3, file$2, 98, 24, 2187);
+    			add_location(h2, file$2, 99, 24, 2231);
+    			add_location(h4, file$2, 101, 24, 2366);
+    			add_location(div, file$2, 97, 20, 2157);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7055,14 +7076,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(96:16) <Card>",
+    		source: "(97:16) <Card>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (73:25)                  <!-- promise is pending -->                              {:then data}
+    // (72:25)                  <!-- promise is pending -->                              {:then data}
     function create_pending_block(ctx) {
     	const block = {
     		c: noop,
@@ -7077,14 +7098,14 @@ var app = (function () {
     		block,
     		id: create_pending_block.name,
     		type: "pending",
-    		source: "(73:25)                  <!-- promise is pending -->                              {:then data}",
+    		source: "(72:25)                  <!-- promise is pending -->                              {:then data}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (64:4) <CardLg>
+    // (63:4) <CardLg>
     function create_default_slot$1(ctx) {
     	let div1;
     	let div0;
@@ -7111,9 +7132,9 @@ var app = (function () {
     			div0 = element("div");
     			info.block.c();
     			attr_dev(div0, "class", "container");
-    			add_location(div0, file$2, 71, 12, 1435);
+    			add_location(div0, file$2, 70, 12, 1339);
     			attr_dev(div1, "class", "quiz svelte-1m11f7o");
-    			add_location(div1, file$2, 67, 8, 1331);
+    			add_location(div1, file$2, 66, 8, 1235);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -7156,7 +7177,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(64:4) <CardLg>",
+    		source: "(63:4) <CardLg>",
     		ctx
     	});
 
@@ -7166,9 +7187,7 @@ var app = (function () {
     function create_fragment$2(ctx) {
     	let main;
     	let header;
-    	let t0;
-    	let progress;
-    	let t1;
+    	let t;
     	let cardlg;
     	let main_intro;
     	let main_outro;
@@ -7176,14 +7195,6 @@ var app = (function () {
 
     	header = new Header({
     			props: { resetQuiz: /*resetQuiz*/ ctx[6] },
-    			$$inline: true
-    		});
-
-    	progress = new Progress$1({
-    			props: {
-    				value: /*questionNumber*/ ctx[2] * 10,
-    				color: '#80FF72'
-    			},
     			$$inline: true
     		});
 
@@ -7199,11 +7210,9 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			create_component(header.$$.fragment);
-    			t0 = space();
-    			create_component(progress.$$.fragment);
-    			t1 = space();
+    			t = space();
     			create_component(cardlg.$$.fragment);
-    			add_location(main, file$2, 57, 0, 1147);
+    			add_location(main, file$2, 57, 0, 1128);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7211,16 +7220,11 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
     			mount_component(header, main, null);
-    			append_dev(main, t0);
-    			mount_component(progress, main, null);
-    			append_dev(main, t1);
+    			append_dev(main, t);
     			mount_component(cardlg, main, null);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			const progress_changes = {};
-    			if (dirty & /*questionNumber*/ 4) progress_changes.value = /*questionNumber*/ ctx[2] * 10;
-    			progress.$set(progress_changes);
     			const cardlg_changes = {};
 
     			if (dirty & /*$$scope, quiz, $score, activeQuestion, questionNumber*/ 16399) {
@@ -7232,7 +7236,6 @@ var app = (function () {
     		i: function intro(local) {
     			if (current) return;
     			transition_in(header.$$.fragment, local);
-    			transition_in(progress.$$.fragment, local);
     			transition_in(cardlg.$$.fragment, local);
 
     			add_render_callback(() => {
@@ -7246,7 +7249,6 @@ var app = (function () {
     		},
     		o: function outro(local) {
     			transition_out(header.$$.fragment, local);
-    			transition_out(progress.$$.fragment, local);
     			transition_out(cardlg.$$.fragment, local);
     			if (main_intro) main_intro.invalidate();
     			main_outro = create_out_transition(main, fade, {});
@@ -7255,7 +7257,6 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
     			destroy_component(header);
-    			destroy_component(progress);
     			destroy_component(cardlg);
     			if (detaching && main_outro) main_outro.end();
     		}
@@ -7285,7 +7286,7 @@ var app = (function () {
     	let numberOfQuestions = 10;
 
     	async function getQuiz() {
-    		const res = await fetch(`https://opentdb.com/api.php?amount=${numberOfQuestions}&category=12&type=multiple&difficulty=medium`);
+    		const res = await fetch(`https://opentdb.com/api.php?amount=${numberOfQuestions}&category=9&type=multiple`);
     		const quiz = await res.json();
     		return quiz;
     	}

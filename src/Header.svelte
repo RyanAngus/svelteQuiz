@@ -7,7 +7,7 @@ export let resetQuiz
 
 
 <main>
-    <h1>🎉 Trivia Time 🎉</h1>
+    <h1>🎉 Music Trivia 🎉</h1>
     <button class="restart-btn" on:click={resetQuiz}>Start Quiz</button>
 </main>
 
